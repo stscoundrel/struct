@@ -1,0 +1,35 @@
+{
+    "name": "silvanus/structs",
+    "description": "Structs for PHP. Simple data transfer objects.",
+    "type": "library",
+    "require": {},
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.5",
+        "phpunit/phpunit": "^9"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Silvanus / Sampo Silvennoinen",
+            "email": "silvennoinen.sampo@gmail.com",
+            "homepage": "https://github.com/stscoundrel"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "Silvanus\\Structs\\": "src/",
+        "Silvanus\\Structs\\Tests\\": "tests/"
+      }
+    },
+    "scripts": {
+      "test": [
+        "phpunit --testdox"
+      ],
+      "lint": [
+        "phpcs"
+      ],
+      "fix": [
+        "phpcbf -p -w"
+      ]
+    }
+}
