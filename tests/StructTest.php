@@ -50,6 +50,50 @@ final class StructTest extends TestCase
     }
 
     /**
+     * Can populate props with array.
+     */
+    public function testPopulatePropsInConstruct() {
+        $props = array(
+            'name'       => 'Eiríkr Blóðøx',
+            'department' => 'Norway',
+            'salary'     => 954
+        );
+
+        $employee = new Employee($props);
+
+        $this->assertEquals(
+            'Eiríkr Blóðøx',
+            $employee->name
+        );
+
+        $this->assertEquals(
+            'Norway',
+            $employee->department
+        );
+
+        $this->assertEquals(
+            954,
+            $employee->salary
+        );
+    }
+
+    /**
+     * Throws error if constructor array has illegal properties.
+     */
+    public function testThrowsErrorInIllegalConstructorProperties() {
+        $this->expectException(CanNotSetPropertyException::class);
+
+        $props = array(
+            'name'       => 'Eiríkr Blóðøx',
+            'department' => 'Norway',
+            'salary'     => 954,
+            'hobbies'    => 'Raiding',
+        );
+
+        $employee = new Employee($props);
+    }
+
+    /**
      * Throws error on illegal set.
      */
     public function testThrowsErrorOnIllegalSet() {

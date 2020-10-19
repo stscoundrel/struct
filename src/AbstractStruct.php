@@ -19,6 +19,21 @@ class AbstractStruct
 {
 
     /**
+     * Class constructor.
+     * Can populate props from array.
+     *
+     * @param ?array $properties of Struct.
+     */
+    public function __construct(?array $properties = null)
+    {
+        if( $properties ) :
+            foreach( $properties as $property => $value ) :
+                $this->{$property} = $value;
+            endforeach;
+        endif;
+    }
+
+    /**
      * Stop getting of non-existing property.
      *
      * @param string $name of property.
