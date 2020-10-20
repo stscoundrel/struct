@@ -17,7 +17,8 @@ final class StructTest extends TestCase
     /**
      * Instance can be created.
      */
-    public function testCanCreateInstance() {
+    public function testCanCreateInstance()
+    {
         $this->assertInstanceOf(
             AbstractStruct::class,
             new Employee()
@@ -27,7 +28,8 @@ final class StructTest extends TestCase
     /**
      * Can get and set allowed properties.
      */
-    public function testCanGetAndSetAllowedProperties() {
+    public function testCanGetAndSetAllowedProperties()
+    {
         $employee             = new Employee();
         $employee->name       = 'Eiríkr Blóðøx';
         $employee->department = 'Norway';
@@ -52,7 +54,8 @@ final class StructTest extends TestCase
     /**
      * Can populate props with array.
      */
-    public function testPopulatePropsInConstruct() {
+    public function testPopulatePropsInConstruct()
+    {
         $props = array(
             'name'       => 'Eiríkr Blóðøx',
             'department' => 'Norway',
@@ -80,7 +83,8 @@ final class StructTest extends TestCase
     /**
      * Throws error if constructor array has illegal properties.
      */
-    public function testThrowsErrorInIllegalConstructorProperties() {
+    public function testThrowsErrorInIllegalConstructorProperties()
+    {
         $this->expectException(CanNotSetPropertyException::class);
 
         $props = array(
@@ -96,7 +100,8 @@ final class StructTest extends TestCase
     /**
      * Throws error on illegal set.
      */
-    public function testThrowsErrorOnIllegalSet() {
+    public function testThrowsErrorOnIllegalSet()
+    {
         $this->expectException(CanNotSetPropertyException::class);
 
         $employee      = new Employee();
@@ -106,7 +111,8 @@ final class StructTest extends TestCase
     /**
      * Throws error on illegal set.
      */
-    public function testThrowsErrorOnIllegalGet() {
+    public function testThrowsErrorOnIllegalGet()
+    {
         $this->expectException(CanNotGetPropertyException::class);
         
         $employee = new Employee();

@@ -36,5 +36,4 @@ class Employee extends AbstractStruct
      * @var int.
      */
     public $salary;
-
 }

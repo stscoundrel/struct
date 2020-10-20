@@ -26,8 +26,8 @@ class AbstractStruct
      */
     public function __construct(?array $properties = null)
     {
-        if( $properties ) :
-            foreach( $properties as $property => $value ) :
+        if ($properties) :
+            foreach ($properties as $property => $value) :
                 $this->{$property} = $value;
             endforeach;
         endif;
