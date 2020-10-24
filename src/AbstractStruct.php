@@ -15,7 +15,7 @@ use Silvanus\Structs\Exceptions\CanNotGetPropertyException;
  * Serve as parent for all Struct classes.
  * Allow only in-class-declared properties to be used.
  */
-class AbstractStruct
+abstract class AbstractStruct
 {
 
     /**
