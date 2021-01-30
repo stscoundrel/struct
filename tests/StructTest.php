@@ -1,4 +1,7 @@
 <?php
+
+namespace Silvanus\Structs\Tests;
+
 use PHPUnit\Framework\TestCase;
 
 // Struct deps.
@@ -16,8 +19,10 @@ final class StructTest extends TestCase
 
     /**
      * Instance can be created.
+     *
+     * @return void
      */
-    public function testCanCreateInstance()
+    public function testCanCreateInstance(): void
     {
         $this->assertInstanceOf(
             AbstractStruct::class,
@@ -27,8 +32,10 @@ final class StructTest extends TestCase
 
     /**
      * Can get and set allowed properties.
+     *
+     * @return void
      */
-    public function testCanGetAndSetAllowedProperties()
+    public function testCanGetAndSetAllowedProperties(): void
     {
         $employee             = new Employee();
         $employee->name       = 'Eiríkr Blóðøx';
@@ -53,8 +60,10 @@ final class StructTest extends TestCase
 
     /**
      * Can populate props with array.
+     *
+     * @return void
      */
-    public function testPopulatePropsInConstruct()
+    public function testPopulatePropsInConstruct(): void
     {
         $props = array(
             'name'       => 'Eiríkr Blóðøx',
@@ -82,8 +91,10 @@ final class StructTest extends TestCase
 
     /**
      * Throws error if constructor array has illegal properties.
+     *
+     * @return void
      */
-    public function testThrowsErrorInIllegalConstructorProperties()
+    public function testThrowsErrorInIllegalConstructorProperties(): void
     {
         $this->expectException(CanNotSetPropertyException::class);
 
@@ -99,8 +110,10 @@ final class StructTest extends TestCase
 
     /**
      * Throws error on illegal set.
+     *
+     * @return void
      */
-    public function testThrowsErrorOnIllegalSet()
+    public function testThrowsErrorOnIllegalSet(): void
     {
         $this->expectException(CanNotSetPropertyException::class);
 
@@ -110,8 +123,10 @@ final class StructTest extends TestCase
 
     /**
      * Throws error on illegal set.
+     *
+     * @return void
      */
-    public function testThrowsErrorOnIllegalGet()
+    public function testThrowsErrorOnIllegalGet(): void
     {
         $this->expectException(CanNotGetPropertyException::class);
         

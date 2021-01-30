@@ -24,7 +24,7 @@ abstract class AbstractStructImmutable
     /**
      * Immutable properties stored in array.
      *
-     * @var array.
+     * @var array
      */
     protected $properties = array();
 
@@ -55,8 +55,10 @@ abstract class AbstractStructImmutable
     /**
      * Unset previously declared public properties.
      * They were only used for validation step.
+     *
+     * @return void
      */
-    protected function blockProperties()
+    protected function blockProperties(): void
     {
         $reflection = new ReflectionObject($this);
         $properties = $reflection->getProperties(ReflectionProperty::IS_PUBLIC);
