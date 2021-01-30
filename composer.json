@@ -5,7 +5,8 @@
     "require": {},
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.5",
-        "phpunit/phpunit": "^9"
+        "phpunit/phpunit": "^9",
+        "vimeo/psalm": "^4.4"
     },
     "license": "MIT",
     "authors": [
@@ -24,6 +25,9 @@
     "scripts": {
       "test": [
         "phpunit --testdox"
+      ],
+      "psalm": [
+        "psalm"
       ],
       "lint": [
         "phpcs"
