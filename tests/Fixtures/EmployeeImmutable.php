@@ -8,12 +8,12 @@
 namespace Silvanus\Structs\Tests\Fixtures;
 
 // Parent class.
-use Silvanus\Structs\AbstractStruct;
+use Silvanus\Structs\AbstractStructImmutable;
 
 /**
  * Sample struct for tests.
  */
-class Employee extends AbstractStruct
+class EmployeeImmutable extends AbstractStructImmutable
 {
 
     /**

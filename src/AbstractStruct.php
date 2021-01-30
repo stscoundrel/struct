@@ -15,7 +15,7 @@ use Silvanus\Structs\Exceptions\CanNotGetPropertyException;
  * Serve as parent for all Struct classes.
  * Allow only in-class-declared properties to be used.
  */
-class AbstractStruct
+abstract class AbstractStruct
 {
 
     /**
@@ -26,8 +26,8 @@ class AbstractStruct
      */
     public function __construct(?array $properties = null)
     {
-        if( $properties ) :
-            foreach( $properties as $property => $value ) :
+        if ($properties) :
+            foreach ($properties as $property => $value) :
                 $this->{$property} = $value;
             endforeach;
         endif;
