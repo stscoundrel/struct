@@ -1,4 +1,7 @@
 <?php
+
+namespace Silvanus\Structs\Tests;
+
 use PHPUnit\Framework\TestCase;
 
 // Struct deps.
@@ -16,8 +19,10 @@ final class StructImmutableTest extends TestCase
 
     /**
      * Instance can be created.
+     *
+     * @return void
      */
-    public function testCanCreateInstance()
+    public function testCanCreateInstance(): void
     {
         $this->assertInstanceOf(
             AbstractStructImmutable::class,
@@ -27,8 +32,10 @@ final class StructImmutableTest extends TestCase
 
     /**
      * Can populate props with array.
+     *
+     * @return void
      */
-    public function testCanPopulatePropsInConstruct()
+    public function testCanPopulatePropsInConstruct(): void
     {
         $props = array(
             'name'       => 'Eiríkr inn Rauda',
@@ -56,8 +63,10 @@ final class StructImmutableTest extends TestCase
 
     /**
      * Throws error if constructor array has illegal properties.
+     *
+     * @return void
      */
-    public function testThrowsErrorInIllegalConstructorProperties()
+    public function testThrowsErrorInIllegalConstructorProperties(): void
     {
         $this->expectException(CanNotSetPropertyException::class);
 
@@ -73,8 +82,10 @@ final class StructImmutableTest extends TestCase
 
     /**
      * Throws error on illegal set.
+     *
+     * @return void
      */
-    public function testPropertyCannotBeChanged()
+    public function testPropertyCannotBeChanged(): void
     {
         $this->expectException(CanNotSetPropertyException::class);
 
@@ -90,8 +101,10 @@ final class StructImmutableTest extends TestCase
 
     /**
      * Throws error on illegal set.
+     *
+     * @return void
      */
-    public function testPropertiesCannotBeAdded()
+    public function testPropertiesCannotBeAdded(): void
     {
         $this->expectException(CanNotSetPropertyException::class);
 
@@ -107,8 +120,10 @@ final class StructImmutableTest extends TestCase
 
     /**
      * Throws error on illegal set.
+     *
+     * @return void
      */
-    public function testNotExistingPropertiesCannotBeUsed()
+    public function testNotExistingPropertiesCannotBeUsed(): void
     {
         $this->expectException(CanNotGetPropertyException::class);
 
