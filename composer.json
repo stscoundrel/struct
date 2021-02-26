@@ -6,7 +6,8 @@
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.5",
         "phpunit/phpunit": "^9",
-        "vimeo/psalm": "^4.4"
+        "vimeo/psalm": "^4.4",
+        "infection/infection": "^0.18.2"
     },
     "license": "MIT",
     "authors": [
@@ -28,6 +29,9 @@
       ],
       "psalm": [
         "psalm"
+      ],
+      "infection": [
+        "infection --threads=4 --min-covered-msi=100"
       ],
       "lint": [
         "phpcs"
