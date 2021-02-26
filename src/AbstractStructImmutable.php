@@ -58,7 +58,7 @@ abstract class AbstractStructImmutable
      *
      * @return void
      */
-    protected function blockProperties(): void
+    private function blockProperties(): void
     {
         $reflection = new ReflectionObject($this);
         $properties = $reflection->getProperties(ReflectionProperty::IS_PUBLIC);
