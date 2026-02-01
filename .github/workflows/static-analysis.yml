@@ -13,7 +13,7 @@ jobs:
         phpunit-versions: ['latest']
     steps:
     - name: Checkout
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
 
     - name: Static Analysis with PHP
       uses: shivammathur/setup-php@v2
